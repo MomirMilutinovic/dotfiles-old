@@ -207,13 +207,12 @@ exec_always feh --bg-scale Wallpaper.png
 
 exec_always compton
 exec polybar example
+exec xrdb -merge Xresources
 
 #Set up layouts
-exec setxkbmap us,rs,si
+exec_always  setxkbmap us,rs,si
 
-#Set up toggle key
-exec setxkbmap -option 'grp:alt_shift_toggle'
-
+#Screenshot
 bindsym Print exec spectacle
 new_window pixel 2
 
