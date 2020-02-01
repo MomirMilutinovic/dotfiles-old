@@ -21,11 +21,12 @@ module-margin-right = 0
 font-0 = Comfortaa:pixelsize=8;2
 font-1 = UbuntuMono Nerd Font:size=10;1
 font-2 = UbuntuMono Nerd Font:size=16;4
-font-3 = Weather Icons:size=10;0
+font-3 = Weather Icons:size=10;1
+font-4 = Material Icons:size=10;1
 
 modules-left = ip wireless-network
 modules-center = date
-modules-right = weather filesystem pulseaudio battery
+modules-right = weather pulseaudio battery
 
 tray-position = right
 tray-padding = 2
@@ -275,7 +276,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /home
-label-mounted = "   %percentage_used%% "
+label-mounted = "  %{T0}%{T-} %percentage_used%% "
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.background-alt}
 
@@ -303,6 +304,12 @@ type = custom/script
 exec = ~/.config/polybar-forecast/polybar-forecast-linux-x86_64
 exec-if = ping openweathermap.org -c 1
 interval = 600
-label-font = 1
+label-font = 4
 api_key = "46c3bf8c5c8bac1cf7207417ebdbfa4c"
 city_id = "3194360"
+
+format = " <label> "
+format-background = ${colors.background-alt}
+format-prefix = %{T3}%{T-}
+format-prefix-foreground = ${colors.background-alt}
+format-prefix-background = ${colors.background}
